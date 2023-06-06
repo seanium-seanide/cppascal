@@ -13,6 +13,8 @@ public:
   Token(std::string type, int value);
   ~Token();
 
+  std::string getType() { return m_type; }
+
   /**
    * @brief Overloaded stream output operator to print string representation
    *        of the Token instance.

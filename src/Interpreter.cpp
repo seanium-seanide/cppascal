@@ -56,6 +56,19 @@ Token *Interpreter::getNextToken()
   return nullptr;
 }
 
+void Interpreter::eat(std::string type)
+{
+  if (m_currentToken->getType() == type)
+  {
+    delete m_currentToken;
+    m_currentToken = nullptr;
+
+    m_currentToken = getNextToken();
+  }
+
+  error();
+}
+
 std::string Interpreter::expr() const
 {
   return "";
