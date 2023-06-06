@@ -1,5 +1,11 @@
 #include "Token.h"
 
+Token::Token(std::string type, int value)
+: m_type(type)
+, m_value(value)
+{
+}
+
 std::ostream &operator<<(std::ostream &out, const Token &token)
 {
   out << token.to_string();
@@ -9,6 +15,13 @@ std::ostream &operator<<(std::ostream &out, const Token &token)
 
 std::string Token::to_string() const
 {
-  return std::string("");
-}
+  std::string retval = "";
 
+  retval += "Token(";
+  retval += m_type;
+  retval += ", ";
+  retval += std::to_string(m_value);
+  retval += ")";
+
+  return retval;
+}

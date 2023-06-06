@@ -2,7 +2,6 @@
 #define CLASS_INTERPRETER_H
 
 #include <string>
-#include <ostream>
 
 class Interpreter
 {
