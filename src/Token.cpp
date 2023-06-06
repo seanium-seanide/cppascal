@@ -8,6 +8,10 @@ Token::Token(std::string type, int value)
   (void) m_value;
 }
 
+Token::~Token()
+{
+}
+
 std::ostream &operator<<(std::ostream &out, const Token &token)
 {
   out << token.to_string();

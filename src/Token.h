@@ -27,7 +27,7 @@ public:
 private:
 
   std::string m_type;
-  int m_value;
+  int         m_value;
 
   /**
    * @brief Return string representation of the Token instance.
