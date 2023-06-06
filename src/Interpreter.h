@@ -12,6 +12,7 @@ public:
   Interpreter(std::string text);
   ~Interpreter();
 
+  void error();
   std::string expr() const;
 
 private:

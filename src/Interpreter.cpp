@@ -1,5 +1,7 @@
 #include "Interpreter.h"
 
+#include <stdexcept>
+
 Interpreter::Interpreter(std::string text)
 : m_text(text)
 , m_pos(0)
@@ -12,6 +14,11 @@ Interpreter::Interpreter(std::string text)
 
 Interpreter::~Interpreter()
 {
+}
+
+void Interpreter::error()
+{
+  throw std::runtime_error("Error parsing input");
 }
 
 std::string Interpreter::expr() const
