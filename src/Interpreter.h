@@ -2,6 +2,7 @@
 #define CLASS_INTERPRETER_H
 
 #include <string>
+#include <ostream>
 
 class Interpreter
 {
@@ -11,9 +12,10 @@ public:
   Interpreter(std::string text);
   ~Interpreter();
 
-  std::string expr();
+  std::string expr() const;
 
 private:
+
 };
 
 #endif

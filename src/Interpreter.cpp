@@ -13,7 +13,7 @@ Interpreter::~Interpreter()
 {
 }
 
-std::string Interpreter::expr()
+std::string Interpreter::expr() const
 {
   return "";
 }
