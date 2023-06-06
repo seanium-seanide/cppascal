@@ -14,6 +14,7 @@ public:
 
   void error();
   std::string expr() const;
+  void getNextToken();
 
 private:
 

@@ -21,6 +21,10 @@ void Interpreter::error()
   throw std::runtime_error("Error parsing input");
 }
 
+void Interpreter::getNextToken()
+{
+}
+
 std::string Interpreter::expr() const
 {
   return "";
