@@ -3,11 +3,12 @@
 
 #include <string>
 
+#include "Token.h"
+
 class Interpreter
 {
 public:
 
-  Interpreter();
   Interpreter(std::string text);
   ~Interpreter();
 
@@ -15,6 +16,9 @@ public:
 
 private:
 
+  std::string m_text;
+  int m_pos;
+  Token *m_currentToken;
 };
 
 #endif

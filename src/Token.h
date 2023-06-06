@@ -4,9 +4,7 @@
 #include <ostream>
 #include <string>
 
-std::string INTEGER = "INTEGER";
-std::string PLUS = "INTEGER";
-std::string END_OF_FILE = "EOF";
+#include "constants.h"
 
 class Token
 {

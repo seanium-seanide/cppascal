@@ -4,6 +4,8 @@ Token::Token(std::string type, int value)
 : m_type(type)
 , m_value(value)
 {
+  (void) m_type;
+  (void) m_value;
 }
 
 std::ostream &operator<<(std::ostream &out, const Token &token)
