@@ -69,7 +69,21 @@ void Interpreter::eat(std::string type)
   error();
 }
 
-std::string Interpreter::expr() const
+std::string Interpreter::expr()
 {
-  return "";
+  m_currentToken = getNextToken();
+
+  Token *leftOperand = m_currentToken;
+  eat(INTEGER);
+
+  Token *op = m_currentToken;
+  (void) op;
+  eat(PLUS);
+
+  Token *rightOperand = m_currentToken;
+  eat(INTEGER);
+
+  int result = leftOperand->getValue() + rightOperand->getValue();
+
+  return std::string(std::to_string(result));
 }

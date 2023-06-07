@@ -13,7 +13,8 @@ public:
   Token(std::string type, int value);
   ~Token();
 
-  std::string getType() { return m_type; }
+  std::string getType()   { return m_type; }
+  int         getValue()  { return m_value; }
 
   /**
    * @brief Overloaded stream output operator to print string representation

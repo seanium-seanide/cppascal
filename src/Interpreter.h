@@ -28,7 +28,7 @@ public:
   /**
    * @brief TODO
    */
-  std::string expr() const;
+  std::string expr();
 
 private:
 
