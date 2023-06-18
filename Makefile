@@ -1,12 +1,13 @@
 APP=cppascal
 
-CC=clang++
-CFLAGS=-W -Wall
-LDFLAGS=
-
 SRCDIR=src
 OBJDIR=obj
 BINDIR=bin
+INCLUDEDIR=include
+
+CC=clang++
+CFLAGS=-W -Wall -I $(INCLUDEDIR)
+LDFLAGS=
 
 BIN=$(BINDIR)/$(APP)
 OBJ=$(OBJDIR)/main.o $(OBJDIR)/Interpreter.o $(OBJDIR)/Token.o
@@ -15,15 +16,15 @@ $(BIN): $(OBJ)
 	@mkdir -p $(BINDIR)
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
-$(OBJDIR)/main.o: $(SRCDIR)/main.cpp $(SRCDIR)/main.h
+$(OBJDIR)/main.o: $(SRCDIR)/main.cpp $(INCLUDEDIR)/main.h
 	@mkdir -p $(OBJDIR)
 	$(CC) -c $(CFLAGS) -o $@ $< 
 
-$(OBJDIR)/Interpreter.o: $(SRCDIR)/Interpreter.cpp $(SRCDIR)/Interpreter.h
+$(OBJDIR)/Interpreter.o: $(SRCDIR)/Interpreter.cpp $(INCLUDEDIR)/Interpreter.h
 	@mkdir -p $(OBJDIR)
 	$(CC) -c $(CFLAGS) -o $@ $< 
 
-$(OBJDIR)/Token.o: $(SRCDIR)/Token.cpp $(SRCDIR)/Token.h
+$(OBJDIR)/Token.o: $(SRCDIR)/Token.cpp $(INCLUDEDIR)/Token.h
 	@mkdir -p $(OBJDIR)
 	$(CC) -c $(CFLAGS) -o $@ $< 
 
