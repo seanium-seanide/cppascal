@@ -2,6 +2,7 @@
 
 #include <stdexcept>
 #include <cctype>
+#include <iostream>
 
 #include "token_constants.h"
 
@@ -58,12 +59,30 @@ Token *Interpreter::getNextToken()
 
 void Interpreter::eat(std::string type)
 {
+  std::cerr << "### TOP OF eat() ###" << std::endl;
+
   if (m_currentToken->getType() == type)
   {
-    delete m_currentToken;
-    m_currentToken = nullptr;
+    std::cerr << "### TOP OF LOOP IN eat() ###" << std::endl;
+
+    if (m_currentToken != nullptr)
+    {
+      std::cerr << "### TOKEN WAS NOT NULLPTR IN eat() ###" << std::endl;
+
+      delete m_currentToken;
+
+      std::cerr << "### TOKEN WAS FREED eat() ###" << std::endl;
+
+      m_currentToken = nullptr;
+    }
+
+    std::cerr << "### getNextToken() about to be called from eat() ###" << std::endl;
 
     m_currentToken = getNextToken();
+
+    std::cerr << "### RETURNING FROM eat() ###" << std::endl;
+
+    return;
   }
 
   error();

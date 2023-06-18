@@ -6,8 +6,11 @@ BINDIR=bin
 INCLUDEDIR=include
 
 CC=clang++
-CFLAGS=-W -Wall -I $(INCLUDEDIR)
+CFLAGS=-W -Wall -I $(INCLUDEDIR) -g -D_GLIBCXX_DEBUG
 LDFLAGS=
+
+GDB=gdb
+GDBOPTIONS=--tui
 
 BIN=$(BINDIR)/$(APP)
 OBJ=$(OBJDIR)/main.o $(OBJDIR)/Interpreter.o $(OBJDIR)/Token.o
@@ -38,3 +41,7 @@ clean:
 .PHONY: run
 run:
 	./$(BIN)
+
+.PHONY: debug
+debug:
+	$(GDB) $(GDBOPTIONS) ./$(BIN)

@@ -16,19 +16,22 @@ public:
    * @brief Tokenises the string passed as input. Yields the next toen for
    *        parsing.
    */
-  Token       *getNextToken();
+  Token
+  *getNextToken();
 
   /**
    * @brief If current token is of given type, eat it and get the next token.
    *
    * @param[in] type  Token type with which to compare current token.
    */
-  void eat(std::string type);
+  void
+  eat(std::string type);
 
   /**
    * @brief TODO
    */
-  std::string expr();
+  std::string
+  expr();
 
 private:
 

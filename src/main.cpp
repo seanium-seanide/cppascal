@@ -8,8 +8,11 @@ int main()
 {
   std::string input;
 
-  while (std::cin >> input)
+  while (std::getline(std::cin, input))
   {
+    // Debug
+    std::cout << "input: " << input << std::endl;
+
     if (input == "")
     {
       continue;
